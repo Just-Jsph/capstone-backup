@@ -641,6 +641,7 @@ export default function InventoryIndex() {
               <label className="text-sm font-medium">Material Name</label>
               <Input
                 required
+                maxLength={30}
                 value={data.name}
                 onChange={(e) => setData('name', e.target.value)}
                 placeholder="e.g. Hokkaido Flour"
@@ -667,6 +668,7 @@ export default function InventoryIndex() {
               <div className="space-y-2">
                 <label className="text-sm font-medium">{isEditModalOpen ? 'Adjust Stock' : 'Initial Stock'}</label>
                 <Input
+                min={1}
                   type="number"
                   step="0.0001"
                   required
