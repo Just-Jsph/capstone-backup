@@ -575,7 +575,7 @@ export default function ProductsIndex() {
                         <div className="grid grid-cols-2 gap-4">
                             <div className="col-span-2 space-y-2">
                                 <label className="text-sm font-medium">Name</label>
-                                <Input required value={data.name} onChange={(e) => setData('name', e.target.value)} placeholder="Product Name" />
+                                <Input required maxLength={50} value={data.name} onChange={(e) => setData('name', e.target.value)} placeholder="Product Name" />
                                 {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
                             </div>
                             <div className="space-y-2">
@@ -600,12 +600,12 @@ export default function ProductsIndex() {
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-medium">Cost Price</label>
-                                <Input type="number" step="0.01" required value={data.cost_price} onChange={(e) => setData('cost_price', e.target.value)} placeholder="0.00" />
+                                <Input type="number" min={1} step="0.01" required value={data.cost_price} onChange={(e) => setData('cost_price', e.target.value)} placeholder="0.00" />
                                 {errors.cost_price && <p className="text-xs text-destructive">{errors.cost_price}</p>}
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-medium">Selling Price</label>
-                                <Input type="number" step="0.01" required value={data.selling_price} onChange={(e) => setData('selling_price', e.target.value)} placeholder="0.00" />
+                                <Input type="number" min={1} step="0.01" required value={data.selling_price} onChange={(e) => setData('selling_price', e.target.value)} placeholder="0.00" />
                                 {errors.selling_price && <p className="text-xs text-destructive">{errors.selling_price}</p>}
                             </div>
                             {/* Product Image Upload */}

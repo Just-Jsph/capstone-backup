@@ -469,6 +469,7 @@ export default function CategoriesIndex() {
                 <label className="text-sm font-medium">Name</label>
                 <Input
                   required
+                  maxLength={40}
                   value={data.name}
                   onChange={(e) => setData('name', e.target.value)}
                   placeholder="e.g., Electronics, Personal Care"
@@ -478,6 +479,7 @@ export default function CategoriesIndex() {
               <div className="space-y-2">
                 <label className="text-sm font-medium">Description</label>
                 <Input
+                maxLength={300}
                   value={data.description}
                   onChange={(e) => setData('description', e.target.value)}
                   placeholder="Brief description of the category"
